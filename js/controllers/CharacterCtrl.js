@@ -6,19 +6,16 @@ CharacterList.controller('CharacterCtrl', function CharacterCtrl($scope, $http) 
         $scope.houses = $scope.getHouses(data);
     });
 
+    $scope.house = null;
     $scope.predicate = 'name';
     $scope.reverse = false;
-    $scope.house = '';
 
-    $scope.sort = function (new_sort) {
-        var current_sort = $scope.predicate;
-
-        if (new_sort === current_sort) {
-            $scope.reverse = !$scope.reverse;
-        } else {
-            $scope.predicate = new_sort;
-            $scope.reverse = false;
+    $scope.filterByHouse = function (character) {
+        if ($scope.house === null) {
+            return true;
         }
+
+        return character.house == $scope.house.name;
     };
 
     $scope.getHouses = function (data) {
@@ -38,5 +35,16 @@ CharacterList.controller('CharacterCtrl', function CharacterCtrl($scope, $http) 
         });
 
         return houses;
+    };
+
+    $scope.sort = function (new_sort) {
+        var current_sort = $scope.predicate;
+
+        if (new_sort === current_sort) {
+            $scope.reverse = !$scope.reverse;
+        } else {
+            $scope.predicate = new_sort;
+            $scope.reverse = false;
+        }
     };
 });

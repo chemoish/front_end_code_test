@@ -26,7 +26,7 @@
                     <a href="?eposides=asc" ng-click="sort('episodes')" sort>Episodes</a>
                 </th>
             </tr>
-            <tr ng-repeat="character in characters | orderBy:predicate:reverse | filter:house">
+            <tr ng-repeat="character in characters | orderBy:predicate:reverse | filter:filterByHouse">
                 <td>{{character.name}}</td>
                 <td>{{character.house}}</td>
                 <td>{{character.actor}}</td>
