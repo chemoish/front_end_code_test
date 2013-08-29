@@ -1,0 +1,83 @@
+/**
+ * Global
+ */
+
+body
+{
+	background-color: #010101;
+}
+
+a
+{
+	color: #b21525;
+}
+
+a:hover
+{
+	color: #e11a2d;
+}
+
+table
+{
+	background-color: #fff;
+}
+
+/**
+ * Header
+ */
+
+header
+{
+	background: url(../img/bg.jpg) no-repeat center;
+	height: 100px;
+}
+
+header h1
+{
+	text-indent: -1000px;
+}
+
+/**
+ * Content
+ */
+
+.panel-heading h1
+{
+	font-size: 24px;
+	margin: 0;
+}
+
+th a:hover
+{
+	text-decoration: none;
+}
+
+th a:after
+{
+	padding-left: 5px;
+}
+
+th .asc:after
+{
+	content: '\25B4';
+}
+
+th .desc:after
+{
+	content: '\25BE';
+}
+
+/**
+ * Footer
+ */
+
+/**
+ * Media queries
+ */
+
+@media (max-width: 991px) {
+	header
+	{
+		background-size: cover;
+	}
+}
