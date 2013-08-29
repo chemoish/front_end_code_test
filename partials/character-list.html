@@ -1,9 +1,14 @@
-<section id="character_list">
+<section id="character_list" ng-controller="CharacterCtrl">
     <div class="table-responsive panel">
         <div class="panel-heading">
             <h1>Character List</h1>
         </div>
-        <table class="table table-striped" ng-controller="CharacterCtrl">
+        <div class="panel-body">
+            <select ng-model="house" ng-options="h.name for h in houses">
+                <option value="">Select a house&hellip;</option>
+            </select>
+        </div>
+        <table class="table table-striped" >
             <tr>
                 <th>
                     <a href="?name=asc" class="asc" ng-click="sort('name')" sort>Name</a>
@@ -21,7 +26,7 @@
                     <a href="?eposides=asc" ng-click="sort('episodes')" sort>Episodes</a>
                 </th>
             </tr>
-            <tr ng-repeat="character in characters | orderBy:predicate:reverse">
+            <tr ng-repeat="character in characters | orderBy:predicate:reverse | filter:house">
                 <td>{{character.name}}</td>
                 <td>{{character.house}}</td>
                 <td>{{character.actor}}</td>

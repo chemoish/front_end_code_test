@@ -1,3 +1,5 @@
+'use strict';
+
 CharacterList.directive('sort', function () {
     return function (scope, element, attrs) {
         var $element = $(element);
